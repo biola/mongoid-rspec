@@ -11,7 +11,7 @@ module Mongoid
       end
 
       def of_type(type)
-        @type = type
+        @type = (type == ::Boolean ? Mongoid::Boolean : type)
         self
       end
 
